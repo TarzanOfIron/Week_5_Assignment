@@ -13,6 +13,14 @@ public class ToDoItemTask {
     private Person assignee;
 
 
+    //
+
+    public ToDoItemTask(ToDoItem toDoItem, Person assignee) {
+        this.toDoItem = toDoItem;
+        this.assignee = assignee;
+    }
+
+
     // Getters
 
 

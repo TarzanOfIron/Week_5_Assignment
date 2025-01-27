@@ -19,6 +19,16 @@ public class ToDoItem {
     private Person creator;
 
 
+    // Constructors
+
+    public ToDoItem(String title, String taskDescription, LocalDate deadLine, Person creator) {
+        this.title = title;
+        this.taskDescription = taskDescription;
+        this.deadLine = deadLine;
+        this.creator = creator;
+    }
+
+
     // Getters
 
     public int getId() {

@@ -12,6 +12,15 @@ public class Person {
     private String email;
 
 
+    // Constructors
+
+    public Person(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
+
     // Getters
 
     public int getId() {
