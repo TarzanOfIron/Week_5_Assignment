@@ -18,5 +18,11 @@ public class Main {
             System.out.println("true");
         }
         System.out.println(tDI1.getSummary());
+
+        ToDoItemTask tdit = new ToDoItemTask();
+        System.out.println(tdit.summary());
+        tdit.setAssignee(person1);
+        System.out.println(tdit.summary());
+
     }
 }

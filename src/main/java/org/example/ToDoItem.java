@@ -91,6 +91,6 @@ public class ToDoItem {
                 ", Task Description: " + taskDescription +
                 ", Deadline: " + deadLine +
                 ", Done: " + done +
-                ", Creator: " + creator.getId());
+                ", Creator: " + creator);
     }
 }
