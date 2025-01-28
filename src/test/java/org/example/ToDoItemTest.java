@@ -157,4 +157,11 @@ class ToDoItemTest {
                 "\nCreator: null",
                 toDoItem.getSummary());
     }
+
+    //ID
+    @Test
+    void getIdShouldReturnZero() {
+        ToDoItem toDoItem = new ToDoItem("Take Out The Trash", LocalDate.now().plusMonths(2));
+        assertEquals(0, toDoItem.getId());
+    }
 }
