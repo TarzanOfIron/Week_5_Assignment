@@ -10,7 +10,7 @@ public class Main {
         person1.setEmail("asdf");
         System.out.println(person1.getSummary());
 
-        ToDoItem tDI1 = new ToDoItem("Task 1", "It is a test task", LocalDate.now().plusMonths(2), person1);
+        ToDoItem tDI1 = new ToDoItem("Task 1", LocalDate.now().plusMonths(2));
         tDI1.setDone(false);
         tDI1.setDeadLine(LocalDate.now().minusDays(1));
         tDI1.setCreator(person1);

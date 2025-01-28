@@ -21,11 +21,9 @@ public class ToDoItem {
 
     // Constructors
 
-    public ToDoItem(String title, String taskDescription, LocalDate deadLine, Person creator) {
+    public ToDoItem(String title, LocalDate deadLine) {
         this.title = title;
-        this.taskDescription = taskDescription;
         this.deadLine = deadLine;
-        this.creator = creator;
     }
 
 
