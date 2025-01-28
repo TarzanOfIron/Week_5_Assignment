@@ -101,4 +101,12 @@ class PersonTest {
          Person person = new Person("Botond", "Medgyesi", "aaa");
          assertEquals("id: 0\nname: Botond Medgyesi\nemail: aaa", person.getSummary());
     }
+
+
+    //Id
+    @Test
+    void idIsZero() {
+        Person person = new Person("Botond", "Medgyesi", "aaa");
+        assertEquals(0, person.getId());
+    }
 }
