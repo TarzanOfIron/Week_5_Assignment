@@ -13,10 +13,11 @@ public class Main {
         ToDoItem tDI1 = new ToDoItem("Task 1", LocalDate.now().plusMonths(2));
         tDI1.setDone(false);
         tDI1.setDeadLine(LocalDate.now().minusDays(1));
-        tDI1.setCreator(person1);
+        //tDI1.setCreator(person1);
         if (tDI1.isOverDue()) {
             System.out.println("true");
         }
+        System.out.println("===============================");
         System.out.println(tDI1.getSummary());
 
         ToDoItemTask tdit = new ToDoItemTask(tDI1, person1);

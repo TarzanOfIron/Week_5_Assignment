@@ -52,7 +52,6 @@ public class ToDoItem {
 
     // Setters
 
-
     public void setTitle(String title) {
         if (title.trim().isEmpty()) {
             throw new IllegalArgumentException("Title missing");
@@ -61,9 +60,6 @@ public class ToDoItem {
     }
 
     public void setTaskDescription(String taskDescription) {
-        if (taskDescription.trim().isEmpty()) {
-            throw new IllegalArgumentException("Task description missing");
-        }
         this.taskDescription = taskDescription;
     }
 
@@ -99,6 +95,7 @@ public class ToDoItem {
                 "\nTask Description: " + taskDescription +
                 "\nDeadline: " + deadLine +
                 "\nDone: " + done +
+                "\nOverdue: " + isOverDue() +
                 "\nCreator: " + creator);
     }
 }
