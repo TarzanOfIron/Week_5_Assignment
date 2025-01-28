@@ -22,8 +22,8 @@ public class ToDoItem {
     // Constructors
 
     public ToDoItem(String title, LocalDate deadLine) {
-        this.title = title;
-        this.deadLine = deadLine;
+        setTitle(title);
+        setDeadLine(deadLine);
     }
 
 

@@ -16,8 +16,8 @@ public class ToDoItemTask {
     // Constructor
 
     public ToDoItemTask(ToDoItem toDoItem, Person assignee) {
-        this.toDoItem = toDoItem;
-        this.assignee = assignee;
+        setToDoItem(toDoItem);
+        setAssignee(assignee);
     }
 
 
