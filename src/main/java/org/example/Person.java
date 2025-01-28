@@ -68,7 +68,7 @@ public class Person {
 
     public String getSummary () {
         return new String("id: " + id +
-                ", name: " + firstName + lastName +
-                ", email: " + email);
+                "\nname: " + firstName + " "+ lastName +
+                "\nemail: " + email);
     }
 }

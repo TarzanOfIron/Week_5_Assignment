@@ -67,8 +67,8 @@ public class ToDoItemTask {
 
     public String summary() {
         return new String("ID: " + id +
-                ", is assigned: " + assigned +
-                ", todo item: " + toDoItem +
-                ", assignee: " + assignee);
+                "\nis assigned: " + assigned +
+                "\ntodo item: " + toDoItem +
+                "\nassignee: " + assignee);
     }
 }

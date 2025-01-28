@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Person person1 = new Person(" ", "Medgyesi", "faszom@123.se");
+        Person person1 = new Person("Botond", "Medgyesi", "faszom@123.se");
         person1.setFirstName("Botond");
         person1.setLastName("Medgyesi");
         person1.setEmail("asdf");

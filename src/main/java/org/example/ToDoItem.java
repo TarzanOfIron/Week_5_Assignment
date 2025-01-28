@@ -95,10 +95,10 @@ public class ToDoItem {
 
     public String getSummary() {
         return  ("ID: " + id +
-                ", Title: " + title +
-                ", Task Description: " + taskDescription +
-                ", Deadline: " + deadLine +
-                ", Done: " + done +
-                ", Creator: " + creator);
+                "\nTitle: " + title +
+                "\nTask Description: " + taskDescription +
+                "\nDeadline: " + deadLine +
+                "\nDone: " + done +
+                "\nCreator: " + creator);
     }
 }
