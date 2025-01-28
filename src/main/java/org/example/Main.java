@@ -20,10 +20,10 @@ public class Main {
         System.out.println("===============================");
         System.out.println(tDI1.getSummary());
 
-        ToDoItemTask tdit = new ToDoItemTask(tDI1, person1);
-        System.out.println(tdit.summary());
-        tdit.setAssignee(person1);
-        System.out.println(tdit.summary());
+        ToDoItem toDoItem = new ToDoItem("Take Out The Trash", LocalDate.now().plusMonths(2));
+        ToDoItemTask toDoItemTask = new ToDoItemTask(toDoItem);
+        System.out.println("===============================");
+        System.out.println(toDoItemTask.getSummary());
 
     }
 }

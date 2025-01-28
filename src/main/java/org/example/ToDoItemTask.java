@@ -15,9 +15,8 @@ public class ToDoItemTask {
 
     // Constructor
 
-    public ToDoItemTask(ToDoItem toDoItem, Person assignee) {
+    public ToDoItemTask(ToDoItem toDoItem) {
         setToDoItem(toDoItem);
-        setAssignee(assignee);
     }
 
 
@@ -65,10 +64,10 @@ public class ToDoItemTask {
         return assigned;
     }
 
-    public String summary() {
+    public String getSummary() {
         return new String("ID: " + id +
-                "\nis assigned: " + assigned +
-                "\ntodo item: " + toDoItem +
-                "\nassignee: " + assignee);
+                "\nIs assigned: " + assigned +
+                "\nTodo item: " + toDoItem +
+                "\nAssignee: " + assignee);
     }
 }
