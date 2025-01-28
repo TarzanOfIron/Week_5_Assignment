@@ -13,7 +13,7 @@ public class ToDoItemTask {
     private Person assignee;
 
 
-    //
+    // Constructor
 
     public ToDoItemTask(ToDoItem toDoItem, Person assignee) {
         this.toDoItem = toDoItem;
@@ -22,7 +22,6 @@ public class ToDoItemTask {
 
 
     // Getters
-
 
     public int getId() {
         return id;
