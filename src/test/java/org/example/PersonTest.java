@@ -95,18 +95,34 @@ class PersonTest {
     }
 
 
-    //Summary
-    @Test
-    void getSummaryListsAllFields() {
-         Person person = new Person("Botond", "Medgyesi", "aaa");
-         assertEquals("id: 0\nname: Botond Medgyesi\nemail: aaa", person.getSummary());
-    }
-
-
     //Id
     @Test
-    void idIsZero() {
+    void idIncreases() {
         Person person = new Person("Botond", "Medgyesi", "aaa");
-        assertEquals(0, person.getId());
+        Person person1 = new Person("Botond", "Medgyesi", "aaa");
+        assertAll("id should increase by one",
+            () -> assertEquals(0, person.getId()),
+            () -> assertEquals(1, person1.getId())
+        );
     }
+
+
+    // Override Methods
+    @Test
+    void toStringReturnsAStringWithAllFields() {
+         Person person = new Person("Botond", "Medgyesi", "aaa");
+         assertEquals("Name: Botond Medgyesi\nEmail: aaa", person.toString());
+    }
+
+    @Test
+    void hashCodeGeneratesHashCodeBasedOnFirstNameLastNameEmailAndId() {
+        Person person = new Person("Botond", "Medgyesi", "BotiMail");
+        assertEquals(person.hashCode(),person.hashCode());
+    }
+
+    @Test
+    void
+
+
+
 }

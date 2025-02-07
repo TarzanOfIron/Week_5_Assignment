@@ -108,7 +108,7 @@ class ToDoItemTaskTest {
                         "\nIs assigned: false" +
                         "\nTodo item: " + toDoItemTask.getToDoItem() +
                         "\nAssignee: null",
-                toDoItemTask.getSummary());
+                toDoItemTask.toString());
     }
 
 }

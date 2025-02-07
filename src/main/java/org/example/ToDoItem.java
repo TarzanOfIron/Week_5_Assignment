@@ -89,13 +89,16 @@ public class ToDoItem {
         return getDeadLine().isBefore(LocalDate.now());
     }
 
-    public String getSummary() {
-        return  ("ID: " + id +
+    @Override
+    public String toString() {
+        return  "ID: " + id +
                 "\nTitle: " + title +
                 "\nTask Description: " + taskDescription +
                 "\nDeadline: " + deadLine +
                 "\nDone: " + done +
-                "\nOverdue: " + isOverDue() +
-                "\nCreator: " + creator);
+                "\nOverdue: " + isOverDue(); // +
+                //"\nCreator: " + creator);
     }
+
+
 }

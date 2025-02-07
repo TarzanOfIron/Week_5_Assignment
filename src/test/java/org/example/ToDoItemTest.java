@@ -155,7 +155,7 @@ class ToDoItemTest {
                 "\nDone: false" +
                 "\nOverdue: false" +
                 "\nCreator: null",
-                toDoItem.getSummary());
+                toDoItem.toString());
     }
 
     //ID

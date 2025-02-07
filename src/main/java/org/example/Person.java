@@ -1,8 +1,12 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Person {
 
     // Fields
+    private static int sequencer = 0;
+
     private int id;
 
     private String firstName;
@@ -11,6 +15,8 @@ public class Person {
 
     private String email;
 
+    private AppUser credentials;
+
 
     // Constructors
 
@@ -18,6 +24,7 @@ public class Person {
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
+        setId();
     }
 
 
@@ -39,6 +46,7 @@ public class Person {
         return email;
     }
 
+    public AppUser getCredentials() { return credentials;}
 
     // Setters
 
@@ -57,18 +65,41 @@ public class Person {
     }
 
     public void setEmail(String email) {
-        if (email.trim().isEmpty()) {
-            throw new IllegalArgumentException("Email adress can not be null");
-        }
         this.email = email;
     }
 
+    public void setCredentials(AppUser credentials) {
+        Objects.requireNonNull(credentials, "You need to assign to a user");
+        this.credentials = credentials;
+    }
+
+    private void setId() {
+        this.id = sequencer++;
+    }
 
     // Methods
+    // Override methods
+    @Override
+    public String toString() {
+        return //"id: " + id +
+                "Name: " + firstName + " " + lastName +
+                "\nEmail: " + email;
+    }
 
-    public String getSummary () {
-        return new String("id: " + id +
-                "\nname: " + firstName + " "+ lastName +
-                "\nemail: " + email);
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, email, id);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        Person newPerson = (Person) obj;
+        return Objects.equals(id, newPerson.id) &&
+                Objects.equals(firstName, newPerson.firstName) &&
+                Objects.equals(lastName, newPerson.lastName) &&
+                Objects.equals(email, newPerson.email);
     }
 }

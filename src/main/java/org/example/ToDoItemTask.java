@@ -64,10 +64,11 @@ public class ToDoItemTask {
         return assigned;
     }
 
-    public String getSummary() {
-        return new String("ID: " + id +
+    @Override
+    public String toString() {
+        return "ID: " + id +
                 "\nIs assigned: " + assigned +
-                "\nTodo item: " + toDoItem +
-                "\nAssignee: " + assignee);
+                "\nTodo item: " + toDoItem;// +
+                //"\nAssignee: " + assignee;
     }
 }
