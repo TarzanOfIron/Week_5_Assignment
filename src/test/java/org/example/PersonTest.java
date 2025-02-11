@@ -89,9 +89,7 @@ class PersonTest {
     @Test
     void setEmptyEmailShouldThrowIllegalArgumentException() {
         Person person = new Person("Botond", "Medgyesi", "BotondM@asd.com");
-        assertThrows(IllegalArgumentException.class, () -> {
-            person.setEmail(" ");
-        });
+        assertThrows(IllegalArgumentException.class, () -> person.setEmail(" "));
     }
 
 
@@ -119,10 +117,4 @@ class PersonTest {
         Person person = new Person("Botond", "Medgyesi", "BotiMail");
         assertEquals(person.hashCode(),person.hashCode());
     }
-
-    @Test
-    void
-
-
-
 }

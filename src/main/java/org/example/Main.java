@@ -1,6 +1,9 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,17 +29,35 @@ public class Main {
         System.out.println("===============================");
         System.out.println(toDoItemTask);
 
-        System.out.println("===============================");System.out.println("===============================");
-        AppUser ap = new AppUser("Botond", "Medgyesi", "email","Boti", "Password", AppRole.ROLE_APP_USER);
-        AppUser ap1 = new AppUser("Botond", "Medgyesi", "email","Boti", "Password", AppRole.ROLE_APP_USER);
-        AppUser ap2 = new AppUser("Botond", "Medgyesi", "email","Boti", "Password", AppRole.ROLE_APP_USER);
-        System.out.println("===============================");System.out.println("===============================");
+        System.out.println("===============================");
+        System.out.println("===============================");
+        AppUser ap = new AppUser("Botond", "Medgyesi", "email", "Boti", "Password", AppRole.ROLE_APP_USER);
+        AppUser ap1 = new AppUser("Botond", "Medgyesi", "email", "Boti", "Password", AppRole.ROLE_APP_USER);
+        AppUser ap2 = new AppUser("Botond", "Medgyesi", "email", "Boti", "Password", AppRole.ROLE_APP_USER);
+        System.out.println("===============================");
+        System.out.println("===============================");
         System.out.println(ap.getId());
         System.out.println(ap1.getId());
         System.out.println(ap2.getId());
-        System.out.println("===============================");System.out.println("===============================");
+        System.out.println("===============================");
+        System.out.println("===============================");
 
         System.out.println(ap);
+        int aaa = 3;
+        Set<Integer> nums = new HashSet<>();
+        nums.add(1);
+        nums.add(2);
+        nums.add(3);
+        nums.add(4);
+        nums.add(5);
+        Iterator<Integer> iteratorNums = nums.iterator();
+        while (iteratorNums.hasNext()) {
+            if (aaa == iteratorNums.next()){
+                iteratorNums.remove();
+                break;
+            }
+        }
+        System.out.println(nums);
 
 
 
