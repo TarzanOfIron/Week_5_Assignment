@@ -1,5 +1,7 @@
 package org.example;
 
+import Sequencers.TodoItemTaskSequencer;
+
 public class ToDoItemTask {
 
     // Fields
@@ -17,6 +19,7 @@ public class ToDoItemTask {
 
     public ToDoItemTask(ToDoItem toDoItem) {
         setToDoItem(toDoItem);
+        setId();
     }
 
 
@@ -36,6 +39,10 @@ public class ToDoItemTask {
 
 
     // Setters
+
+    private void setId() {
+        this.id = TodoItemTaskSequencer.nextId();
+    }
 
     private void setAssigned() {
         if (getAssignee() != null) {

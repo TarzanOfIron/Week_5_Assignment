@@ -16,27 +16,27 @@ public class PersonDAOCollection implements PersonDAO{
     @Override
     public Person findById(int id) {
         Iterator<Person> personIterator = persons.iterator();
-        Person person;
+        Person person = null;
         while (personIterator.hasNext()) {
             person = personIterator.next();
             if (person.getId() == id) {
                 break;
             }
         }
-        return (Person) personIterator;
+        return person;
     }
 
     @Override
     public Person findByEmail(String email) {
         Iterator<Person> personIterator = persons.iterator();
-        Person person;
+        Person person = null;
         while (personIterator.hasNext()) {
             person = personIterator.next();
             if (person.getEmail().equals(email)) {
                 break;
             }
         }
-        return (Person) personIterator;
+        return person;
     }
 
     @Override

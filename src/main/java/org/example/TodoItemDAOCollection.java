@@ -9,7 +9,6 @@ public class TodoItemDAOCollection implements TodoItemDAO {
 
     private HashSet<ToDoItem> toDoItems = new HashSet<>();
 
-
     @Override
     public ToDoItem persist(ToDoItem toDoItem) {
         toDoItems.add(toDoItem);
@@ -19,14 +18,14 @@ public class TodoItemDAOCollection implements TodoItemDAO {
     @Override
     public ToDoItem findById(int id) {
         Iterator<ToDoItem> toDoItemIterator = toDoItems.iterator();
-        ToDoItem toDoItem;
+        ToDoItem toDoItem = null;
         while (toDoItemIterator.hasNext()) {
             toDoItem = toDoItemIterator.next();
             if (toDoItem.getId() == id){
                 break;
             }
         }
-        return (ToDoItem) toDoItemIterator;
+        return toDoItem;
     }
 
     @Override
@@ -42,7 +41,7 @@ public class TodoItemDAOCollection implements TodoItemDAO {
         while (toDoItemIterator.hasNext()){
             toDoItem = toDoItemIterator.next();
             if (toDoItem.isDone() == done) {
-                doneTodoItems.add((ToDoItem) toDoItemIterator);
+                doneTodoItems.add(toDoItem);
             }
         }
         return doneTodoItems;
@@ -56,7 +55,7 @@ public class TodoItemDAOCollection implements TodoItemDAO {
         while (toDoItemIterator.hasNext()){
             toDoItem = toDoItemIterator.next();
             if (Objects.equals(toDoItem.getTitle(), title)) {
-                matchingTodoItemTitles.add((ToDoItem) toDoItemIterator);
+                matchingTodoItemTitles.add(toDoItem);
             }
         }
         return matchingTodoItemTitles;
@@ -69,8 +68,8 @@ public class TodoItemDAOCollection implements TodoItemDAO {
         ToDoItem toDoItem;
         while (toDoItemIterator.hasNext()){
             toDoItem = toDoItemIterator.next();
-            if (toDoItem.getId() == personId) {
-                matchingTodoItemCreators.add((ToDoItem) toDoItemIterator);
+            if (toDoItem.getCreator().getId() == personId) {
+                matchingTodoItemCreators.add(toDoItem);
             }
         }
         return matchingTodoItemCreators;
@@ -83,8 +82,8 @@ public class TodoItemDAOCollection implements TodoItemDAO {
         ToDoItem toDoItem;
         while (toDoItemIterator.hasNext()) {
             toDoItem = toDoItemIterator.next();
-            if (toDoItem.getDeadLine().isAfter(date)){
-                todoItemsBeforeDate.add((ToDoItem) toDoItemIterator);
+            if (date.isBefore(toDoItem.getDeadLine())){
+                todoItemsBeforeDate.add(toDoItem);
             }
         }
         return todoItemsBeforeDate;
@@ -97,8 +96,8 @@ public class TodoItemDAOCollection implements TodoItemDAO {
         ToDoItem toDoItem;
         while (toDoItemIterator.hasNext()) {
             toDoItem = toDoItemIterator.next();
-            if (toDoItem.getDeadLine().isBefore(date)){
-                todoItemsAfterDate.add((ToDoItem) toDoItemIterator);
+            if (date.isAfter(toDoItem.getDeadLine())){
+                todoItemsAfterDate.add(toDoItem);
             }
         }
         return todoItemsAfterDate;

@@ -1,5 +1,8 @@
 package org.example;
 
+import Sequencers.TodoItemSequencer;
+import Sequencers.TodoItemTaskSequencer;
+
 import java.time.LocalDate;
 
 public class ToDoItem {
@@ -24,6 +27,7 @@ public class ToDoItem {
     public ToDoItem(String title, LocalDate deadLine) {
         setTitle(title);
         setDeadLine(deadLine);
+        setId();
     }
 
 
@@ -51,6 +55,11 @@ public class ToDoItem {
 
 
     // Setters
+
+
+    private void setId() {
+        this.id = TodoItemSequencer.nextId();
+    }
 
     public void setTitle(String title) {
         if (title.trim().isEmpty()) {

@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.*;
 
-public class AppUserCollection implements AppUserDAO {
+public class AppUserDAOCollection implements AppUserDAO {
 
     private HashSet<AppUser> appUsers = new HashSet<>();
 
@@ -16,14 +16,21 @@ public class AppUserCollection implements AppUserDAO {
     @Override
     public AppUser findByUsername(String username) {
         Iterator<AppUser> appUserIterator = appUsers.iterator();
-        AppUser appUser;
+        AppUser appUser = null;
         while (appUserIterator.hasNext()) {
             appUser = appUserIterator.next();
             if (appUser.getUsername().equals(username)) {
                 break;
             }
         }
-        return (AppUser) appUserIterator;
+        return appUser;
+       /* AppUser appUserToReturn = null;       //I know it all could have been done with an easy for each, but wanted to try out the Iterator
+        for (AppUser appUser : appUsers){
+            if (appUser.getUsername().equals(username)){
+                appUserToReturn = appUser;
+            }
+        }
+        return  appUserToReturn;*/
     }
 
 

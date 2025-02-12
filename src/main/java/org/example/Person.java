@@ -1,11 +1,13 @@
 package org.example;
 
+import Sequencers.PersonalIdSequencer;
+
 import java.util.Objects;
 
 public class Person {
 
     // Fields
-    private static int sequencer = 0;
+    //private static int sequencer = 0;
 
     private int id;
 
@@ -46,7 +48,9 @@ public class Person {
         return email;
     }
 
-    public AppUser getCredentials() { return credentials;}
+    public AppUser getCredentials() {
+        return credentials;
+    }
 
     // Setters
 
@@ -74,7 +78,7 @@ public class Person {
     }
 
     private void setId() {
-        this.id = sequencer++;
+        this.id = PersonalIdSequencer.nextId();
     }
 
     // Methods
@@ -83,7 +87,7 @@ public class Person {
     public String toString() {
         return //"id: " + id +
                 "Name: " + firstName + " " + lastName +
-                "\nEmail: " + email;
+                        "\nEmail: " + email;
     }
 
     @Override

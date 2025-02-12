@@ -16,14 +16,14 @@ public class TodoItemTaskDAOCollection implements TodoItemTaskDAO {
     @Override
     public ToDoItemTask findById(int id) {
         Iterator<ToDoItemTask> toDoItemTaskIterator = toDoItemTasks.iterator();
-        ToDoItemTask toDoItemTask;
+        ToDoItemTask toDoItemTask = null;
         while (toDoItemTaskIterator.hasNext()) {
             toDoItemTask = toDoItemTaskIterator.next();
             if (toDoItemTask.getId() == id){
                 break;
             }
         }
-        return (ToDoItemTask) toDoItemTaskIterator;
+        return toDoItemTask;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class TodoItemTaskDAOCollection implements TodoItemTaskDAO {
         while (toDoItemTaskIterator.hasNext()) {
             toDoItemTask = toDoItemTaskIterator.next();
             if (toDoItemTask.isAssigned() == status){
-                tasksWithStatus.add((ToDoItemTask) toDoItemTaskIterator);
+                tasksWithStatus.add(toDoItemTask);
             }
         }
 
@@ -54,7 +54,7 @@ public class TodoItemTaskDAOCollection implements TodoItemTaskDAO {
         while (toDoItemTaskIterator.hasNext()) {
             toDoItemTask = toDoItemTaskIterator.next();
             if (toDoItemTask.getAssignee().getId() == personId){
-                tasksAssignedToThisPerson.add((ToDoItemTask) toDoItemTaskIterator);
+                tasksAssignedToThisPerson.add(toDoItemTask);
             }
         }
 
